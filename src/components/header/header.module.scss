@@ -1,0 +1,54 @@
+.header {  
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #205691;
+  padding: 0 20px;
+  position: relative;
+  .imgLogo {
+    width: 100%;
+  }
+  .nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem; // controla o espaçamento corretamente
+}
+
+.link {
+  color: white;
+  font-size: 20px; // 22px está grande demais
+  font-family: "Source Sans 3", sans-serif;
+  white-space: nowrap; // impede quebrar linha
+}
+  .imgUser {
+    width: 50px;
+    border-radius: 50%;
+    border: 3px solid #00aaff;
+    cursor: pointer;
+  }
+}
+
+.navUser {
+  position: absolute;
+  right: 0;
+  top: 5rem;
+  background-color: #205691;
+  a {
+    display: block;
+    padding: 5px 10px;
+    color: white;
+    text-align: end;
+  }
+}
+
+.closedNav {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .imgLogo {
+    max-width: 57px;
+  }
+}
+
