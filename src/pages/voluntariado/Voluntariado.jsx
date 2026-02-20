@@ -1,4 +1,3 @@
-import React from "react";
 import InfoCard from "../../components/infoCard/infoCard";
 import S from './voluntariado.module.scss';
 import Reciclagem from '../../assets/img/reciclagem.png';

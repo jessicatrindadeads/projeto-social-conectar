@@ -1,4 +1,3 @@
-import React from "react";
 import InfoCard from "../../components/infoCard/infoCard";
 import S from './eventos.module.scss';
 import jovens from '../../assets/img/jovens.jpg';

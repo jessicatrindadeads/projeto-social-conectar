@@ -1,4 +1,3 @@
-import React from "react";
 import InfoCard from "../../components/infoCard/infoCard";
 import S from './mentoria.module.scss';
 import ReuniaoMentoria from '../../assets/img/reuniaomentoria.jpg';

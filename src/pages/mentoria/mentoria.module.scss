@@ -22,6 +22,11 @@
     article {
       display: flex;
       justify-content: center;
+      height: 100%;
+    }
+
+    button {
+      margin-top: auto;
     }
   }
 }

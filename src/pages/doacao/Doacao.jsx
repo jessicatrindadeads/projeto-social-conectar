@@ -1,4 +1,3 @@
-import React from "react";
 import InfoCard from "../../components/infoCard/infoCard";
 import S from './doacao.module.scss';
 import iGFamilia from '../../assets/img/iGFamilia.jpg';
