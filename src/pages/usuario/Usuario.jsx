@@ -1,5 +1,5 @@
 import S from "./usuario.module.scss";
-import Mapa from "../../assets/img/Mapa.png";
+import Mapa from "../../assets/img/mapa.png";
 import Carta from "../../assets/img/carta.png";
 import Calendario from "../../assets/img/calendario.png";
 
