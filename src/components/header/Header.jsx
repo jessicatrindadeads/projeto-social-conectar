@@ -1,98 +1,90 @@
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import Logo from "../../assets/img/logo.png";
 import S from "./header.module.scss";
-import { useEffect, useState } from "react";
+
+const links = [
+  { to: "/doacao", label: "Doação" },
+  { to: "/voluntariado", label: "Voluntariado" },
+  { to: "/mentoria", label: "Mentorias" },
+  { to: "/eventos", label: "Eventos & Palestras" },
+];
 
 export default function Header() {
   const [menuAberto, setMenuAberto] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const { pathname } = useLocation();
 
   useEffect(() => {
-    function menuMobile() {
-      setIsMobile(window.innerWidth <= 768);
-      if (window.innerWidth > 768) {
-        setMenuAberto(false);
-      }
+    setMenuAberto(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    function fecharComEscape(event) {
+      if (event.key === "Escape") setMenuAberto(false);
     }
 
-    window.addEventListener("resize", menuMobile);
-    return () => window.removeEventListener("resize", menuMobile);
+    window.addEventListener("keydown", fecharComEscape);
+    return () => window.removeEventListener("keydown", fecharComEscape);
   }, []);
 
   return (
-    <>
-      <header className={S.header}>
-        <section>
-          <Link to="/">
-            <img
-              className={S.imgLogo}
-              src={Logo}
-              alt="Imagem de logo do site sendo representada por uma mão segurando um coração, simbolizando apoio"
-            />
-          </Link>
-        </section>
-        {!isMobile && (
-          <nav className={S.nav}>
-            <Link className={S.link} to="/doacao">
-              Doação
-            </Link>
-            <Link className={S.link} to="/voluntariado">
-              Voluntariado
-            </Link>
-            <Link className={S.link} to="/mentoria">
-              Mentorias
-            </Link>
-            <Link className={S.link} to="/eventos">
-              Eventos & Palestras
-            </Link>
-          </nav>
-        )}
+    <header className={S.header}>
+      <Link className={S.logoLink} to="/" aria-label="Conectar — página inicial">
+        <img className={S.imgLogo} src={Logo} alt="Conectar" />
+      </Link>
+
+      <nav className={S.navDesktop} aria-label="Navegação principal">
+        {links.map(({ to, label }) => (
+          <NavLink
+            key={to}
+            className={({ isActive }) =>
+              `${S.link} ${isActive ? S.active : ""}`
+            }
+            to={to}
+          >
+            {label}
+          </NavLink>
+        ))}
+      </nav>
+
+      <Link className={S.profileLink} to="/usuario" aria-label="Abrir perfil de Jéssica Trindade">
         <img
           className={S.imgUser}
-          src="https://media.licdn.com/dms/image/v2/D4D03AQGzzpIcOvxMYQ/profile-displayphoto-scale_400_400/B4DZfHUOo.GYAk-/0/1751395659198?e=1773273600&v=beta&t=lwRvPwz7z0fsA76MdvpKyOAlTJp2ZwwB0qU6QCmvCzE"
+          src="https://avatars.githubusercontent.com/u/141635580?v=4"
           alt=""
-          onClick={() => setMenuAberto(!menuAberto)}
         />
-      </header>
-      <nav className={menuAberto ? S.navUser : S.closedNav}>
-        <Link to={"/usuario"}>Jéssica Trindade</Link>
-        <Link>Meu Voluntariado</Link>
-        <Link>Configurações de conta</Link>
-        {isMobile && (
-          <div>
-            <Link
-              className={S.link}
-              to="/doacao"
-              onClick={() => setMenuAberto(false)}
-            >
-              Doação
-            </Link>
-            <Link
-              className={S.link}
-              to="/voluntariado"
-              onClick={() => setMenuAberto(false)}
-            >
-              Voluntariado
-            </Link>
-            <Link
-              className={S.link}
-              to="/mentoria"
-              onClick={() => setMenuAberto(false)}
-            >
-              Mentorias
-            </Link>
-            <Link
-              className={S.link}
-              to="/eventosEP"
-              onClick={() => setMenuAberto(false)}
-            >
-              Eventos
-            </Link>
-          </div>
-        )}
+      </Link>
 
-        <Link onClick={() => setMenuAberto(false)}>Sair</Link>
+      <button
+        className={S.menuButton}
+        type="button"
+        aria-label={menuAberto ? "Fechar menu" : "Abrir menu"}
+        aria-expanded={menuAberto}
+        aria-controls="menu-mobile"
+        onClick={() => setMenuAberto((aberto) => !aberto)}
+      >
+        <span />
+        <span />
+        <span />
+      </button>
+
+      <nav
+        id="menu-mobile"
+        className={menuAberto ? S.navMobile : S.closedNav}
+        aria-label="Navegação mobile"
+      >
+        <NavLink className={S.mobileLink} to="/">
+          Home
+        </NavLink>
+        {links.map(({ to, label }) => (
+          <NavLink key={to} className={S.mobileLink} to={to}>
+            {label}
+          </NavLink>
+        ))}
+        <NavLink className={S.mobileLink} to="/usuario">
+          Meu perfil
+        </NavLink>
       </nav>
-    </>
+    </header>
   );
 }
