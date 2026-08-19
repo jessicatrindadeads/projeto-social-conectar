@@ -12,7 +12,7 @@ export default function Voluntariado() {
         <article>
           <InfoCard
             img={Reciclagem}
-            alt="Jovens em mutirão de reciclagem"
+            alt="Jovens separando materiais em um mutirão de reciclagem"
             subtitulo="Mutirão de Reciclagem"
             paragrafo="Colete materiais recicláveis e oriente a comunidade sobre descarte consciente."
             textBotao="Quero participar"
