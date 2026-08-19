@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Logo from "../../assets/img/logo.png";
 import S from "./header.module.scss";
 
@@ -12,12 +12,6 @@ const links = [
 
 export default function Header() {
   const [menuAberto, setMenuAberto] = useState(false);
-  const { pathname } = useLocation();
-
-  useEffect(() => {
-    setMenuAberto(false);
-  }, [pathname]);
-
   useEffect(() => {
     function fecharComEscape(event) {
       if (event.key === "Escape") setMenuAberto(false);
@@ -73,15 +67,24 @@ export default function Header() {
         className={menuAberto ? S.navMobile : S.closedNav}
         aria-label="Navegação mobile"
       >
-        <NavLink className={S.mobileLink} to="/">
+        <NavLink className={S.mobileLink} to="/" onClick={() => setMenuAberto(false)}>
           Home
         </NavLink>
         {links.map(({ to, label }) => (
-          <NavLink key={to} className={S.mobileLink} to={to}>
+          <NavLink
+            key={to}
+            className={S.mobileLink}
+            to={to}
+            onClick={() => setMenuAberto(false)}
+          >
             {label}
           </NavLink>
         ))}
-        <NavLink className={S.mobileLink} to="/usuario">
+        <NavLink
+          className={S.mobileLink}
+          to="/usuario"
+          onClick={() => setMenuAberto(false)}
+        >
           Meu perfil
         </NavLink>
       </nav>
