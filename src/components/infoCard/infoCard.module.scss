@@ -1,84 +1,60 @@
-.article {
-  max-width: 357px;
+.card {
   width: 100%;
+  max-width: 357px;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
-  padding: 16px;  
+  gap: 1rem;
+  padding: 1rem;
+
+  img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 12px;
+  }
 
   h2 {
-    min-height: 64px;
-    color: #122F97;
-    font-size: 28px;
-    font-family: 'Source Sans 3', sans-serif;
-    font-weight: bold;
+    color: #122f97;
+    font-family: "Source Sans 3", sans-serif;
+    font-size: clamp(1.4rem, 3vw, 1.75rem);
+    font-weight: 700;
+    line-height: 1.2;
     text-align: center;
   }
 
   p {
-    font-family: 'Inter', sans-serif;
-    font-size: 15px;
-    color: #122F97;
-    font-weight: 400;
+    color: #122f97;
+    font-family: "Inter", sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.55;
     text-align: center;
-    min-height: 72px;
-    
-
   }
 
   button {
-    
-    border: none;
+    width: min(210px, 100%);
+    min-height: 50px;
+    margin-top: auto;
+    padding: 0.65rem 1rem;
+    color: #ffffff;
     background-color: #205691;
-    width: 210px;
-    height: 50px;
     border-radius: 10px;
-    color: white;
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 1.1rem;
     font-weight: 600;
-    font-size: 20px;
-    font-family: 'Source Sans 3', sans-serif;
     cursor: pointer;
+    transition: background-color 0.2s ease;
   }
 
-  &:hover button {
+  button:hover {
     background-color: #163d6d;
   }
 }
 
-
-.article img {
-  width: 100%;
-  min-height: 200px;
-  max-height: 200px;
-  
-  border-radius: 12px;
-}
-
-@media (max-width: 768px) {
-  .article {
-    max-width: 100%;
-    height: auto;
-    padding: 16px;
-    gap: 12px;
-
-    h2 {
-      font-size: 22px;
-    }
-
-    p {
-      font-size: 14px;
-    }
-
-    button {
-      width: 100%;
-      height: 44px;
-      font-size: 18px;
-    }
-  }
-
-  .article img {
-    min-height: 160px;
-    max-height: 160px;
+@media (max-width: 680px) {
+  .card {
+    max-width: 520px;
+    padding-inline: 0;
   }
 }
