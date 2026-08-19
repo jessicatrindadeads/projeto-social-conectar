@@ -1,8 +1,7 @@
 import InfoCard from "../../components/infoCard/infoCard";
-import S from './voluntariado.module.scss';
-import Reciclagem from '../../assets/img/reciclagem.png';
-import AuladeInformatica from '../../assets/img/auladeinformatica.jpg';
-import Esporte from '../../assets/img/esporte.jpg';
+import AuladeInformatica from "../../assets/img/auladeinformatica.jpg";
+import Reciclagem from "../../assets/img/reciclagem.png";
+import S from "../../styles/catalogPage.module.scss";
 
 export default function Voluntariado() {
   return (
@@ -10,30 +9,30 @@ export default function Voluntariado() {
       <h1>Voluntariado</h1>
       <section>
         <article>
-          <InfoCard 
-          img = {Reciclagem}
-          alt='Imagem de jovens em mutirão de reciclagem'    
-          subtitulo='Mutirão de reciclagem'
-          paragrafo='Coletar materiais recicláveis e orientar sobre descarte consciente.'
-          textBotao='Quero Participar'      
-          />          
+          <InfoCard
+            img={Reciclagem}
+            alt="Jovens em mutirão de reciclagem"
+            subtitulo="Mutirão de Reciclagem"
+            paragrafo="Colete materiais recicláveis e oriente a comunidade sobre descarte consciente."
+            textBotao="Quero participar"
+          />
         </article>
         <article>
-          <InfoCard 
-          img = {AuladeInformatica}
-          alt='Imagem de jovens em aula de informática'    
-          subtitulo='Aulas de Tecnologia'
-          paragrafo='Ensinar noções básicas de informática, internet segura e programação. Preparar jovens para o mercado de trabalho digital.'
-          textBotao='Quero Participar'            
-          />                        
+          <InfoCard
+            img={AuladeInformatica}
+            alt="Jovens em aula de informática"
+            subtitulo="Aulas de Tecnologia"
+            paragrafo="Ensine informática, internet segura e programação para preparar jovens para o mercado digital."
+            textBotao="Quero participar"
+          />
         </article>
         <article>
-          <InfoCard 
-          img = {Esporte}
-          alt='Imagem de inclusao por meio do esporte'    
-          subtitulo='Esporte e Inclusão'
-          paragrafo='Organizar treinos e jogos que incentivem a participação de todos. Promover disciplina, saúde e trabalho em equipe entre jovens.'
-          textBotao='Quero Participar'            
+          <InfoCard
+            img={AuladeInformatica}
+            alt="Jovens participando de uma atividade inclusiva"
+            subtitulo="Esporte e Inclusão"
+            paragrafo="Organize atividades que promovam disciplina, saúde, participação e trabalho em equipe."
+            textBotao="Quero participar"
           />
         </article>
       </section>
