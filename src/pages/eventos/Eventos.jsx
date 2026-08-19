@@ -1,8 +1,8 @@
 import InfoCard from "../../components/infoCard/infoCard";
-import S from './eventos.module.scss';
-import jovens from '../../assets/img/jovens.jpg';
-import tecnologia from '../../assets/img/tecnologia.jpg';
-import reuniao from '../../assets/img/reuniao.png';
+import jovens from "../../assets/img/jovens.jpg";
+import reuniao from "../../assets/img/reuniao.png";
+import tecnologia from "../../assets/img/tecnologia.jpg";
+import S from "../../styles/catalogPage.module.scss";
 
 export default function Eventos() {
   return (
@@ -10,30 +10,30 @@ export default function Eventos() {
       <h1>Eventos & Palestras</h1>
       <section>
         <article>
-          <InfoCard 
-          img = {jovens}
-          alt='Imagem de jovens participando de uma palestra'    
-          subtitulo='Empoderando Jovens para o Futuro'
-          paragrafo='Atividade: Palestra motivacional sobre liderança jovem e transformação social. Impacto: Inspirar adolescentes a se tornarem agentes de mudança em suas comunidades.'
-          textBotao='Quero Participar'      
-          />          
+          <InfoCard
+            img={jovens}
+            alt="Jovens participando de uma palestra"
+            subtitulo="Empoderando Jovens para o Futuro"
+            paragrafo="Palestra motivacional sobre liderança jovem e transformação social para inspirar agentes de mudança."
+            textBotao="Quero participar"
+          />
         </article>
         <article>
-          <InfoCard 
-          img = {tecnologia}
-          alt='Imagem de jovens participando de um workshop de tecnologia'    
-          subtitulo='Tecnologia que Transforma'
-          paragrafo='Atividade: Workshop de introdução à programação e inovação digital. Impacto: Preparar jovens para o mercado de trabalho através da tecnologia.'
-          textBotao='Quero Participar'      
-          />                        
+          <InfoCard
+            img={tecnologia}
+            alt="Jovens participando de um workshop de tecnologia"
+            subtitulo="Tecnologia que Transforma"
+            paragrafo="Workshop de introdução à programação e inovação digital para preparar jovens para o mercado."
+            textBotao="Quero participar"
+          />
         </article>
         <article>
-          <InfoCard 
-          img = {reuniao}
-          alt='Imagem de jovens participando de uma reunião com profissionais de RH para aprender sobre carreira'    
-          subtitulo='Carreira e Primeiro Emprego'
-          paragrafo='Atividade: Palestra com profissionais de RH sobre como preparar currículo, entrevistas e postura no mercado. Impacto: Ajudar jovens a conquistar oportunidades de trabalho.'
-          textBotao='Quero Participar'      
+          <InfoCard
+            img={reuniao}
+            alt="Jovens em encontro sobre carreira"
+            subtitulo="Carreira e Primeiro Emprego"
+            paragrafo="Encontro com profissionais de RH sobre currículo, entrevistas e postura no mercado de trabalho."
+            textBotao="Quero participar"
           />
         </article>
       </section>
