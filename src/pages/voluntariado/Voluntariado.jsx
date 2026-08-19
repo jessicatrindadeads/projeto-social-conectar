@@ -1,6 +1,7 @@
 import InfoCard from "../../components/infoCard/infoCard";
 import AuladeInformatica from "../../assets/img/auladeinformatica.jpg";
 import Reciclagem from "../../assets/img/reciclagem.png";
+import EsporteInclusao from "../../assets/img/esporte-inclusao.webp";
 import S from "../../styles/catalogPage.module.scss";
 
 export default function Voluntariado() {
@@ -28,8 +29,8 @@ export default function Voluntariado() {
         </article>
         <article>
           <InfoCard
-            img={AuladeInformatica}
-            alt="Jovens participando de uma atividade inclusiva"
+            img={EsporteInclusao}
+            alt="Jovens participando de uma atividade esportiva inclusiva"
             subtitulo="Esporte e Inclusão"
             paragrafo="Organize atividades que promovam disciplina, saúde, participação e trabalho em equipe."
             textBotao="Quero participar"
