@@ -17,6 +17,7 @@ Acesse: [projeto-social-conectar.vercel.app](https://projeto-social-conectar.ver
 - Menu responsivo para dispositivos móveis
 - Página personalizada para rotas não encontradas
 - Layout adaptável para desktop, tablet e mobile
+- Imagens otimizadas em WebP para os cards atualizados
 
 ## Tecnologias
 
