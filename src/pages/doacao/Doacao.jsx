@@ -1,6 +1,6 @@
 import InfoCard from "../../components/infoCard/infoCard";
 import iGFamilia from "../../assets/img/iGFamilia.jpg";
-import instituto from "../../assets/img/instituto.png";
+import instituto from "../../assets/img/instituto-conecta-jovem.webp";
 import pFEscola from "../../assets/img/pFEscola.jpg";
 import S from "../../styles/catalogPage.module.scss";
 

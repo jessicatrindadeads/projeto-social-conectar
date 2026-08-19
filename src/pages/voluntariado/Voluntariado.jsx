@@ -1,6 +1,6 @@
 import InfoCard from "../../components/infoCard/infoCard";
 import AuladeInformatica from "../../assets/img/auladeinformatica.jpg";
-import Reciclagem from "../../assets/img/reciclagem.png";
+import Reciclagem from "../../assets/img/mutirao-reciclagem.webp";
 import EsporteInclusao from "../../assets/img/esporte-inclusao.webp";
 import S from "../../styles/catalogPage.module.scss";
 
